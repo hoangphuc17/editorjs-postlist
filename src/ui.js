@@ -6,6 +6,7 @@ export default class UI {
     this.api = api;
     this.config = config;
     this.onSelectPost = onSelectPost;
+    this.onRemovePost = onRemovePost;
     this.readOnly = readOnly;
     this.nodes = {
       wrapper: makeElement("div", [this.CSS.baseClass, this.CSS.wrapper]),
@@ -18,7 +19,7 @@ export default class UI {
 
       listContainer: makeElement("div", [this.CSS.listContainer]),
       post: undefined,
-      selectPostButton: this.createSelectPostButton(),
+      selectPostButton: this._createSelectPostButton(),
     };
 
     /**
@@ -67,21 +68,25 @@ export default class UI {
     };
   }
 
-  createSelectPostButton() {
+  render() {
+    return this.nodes.wrapper;
+  }
+
+  updatePosts(posts) {
+    
+
+  }
+
+  _createSelectPostButton() {
     const button = makeElement("button", [this.CSS.selectPostButton]);
 
     button.innerHTML =
       this.config.buttonContent || `${this.api.i18n.t("Select Post")}`;
 
     button.addEventListener("click", () => {
-      console.log("select post");
       this.onSelectPost();
     });
 
     return button;
-  }
-
-  render() {
-    return this.nodes.wrapper;
   }
 }
