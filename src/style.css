@@ -1,0 +1,35 @@
+:root {
+  --light-gray: #f4f4f4;
+  --green: #a0fa37;
+  --green-darker: #89e224;
+}
+
+.vz-postlist-tool {
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px -8px;
+
+  &__list {
+    &__post {
+    }
+  }
+
+  &__select-post-button {
+    background-color: var(--green);
+    padding: 8px 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--green-darker);
+    }
+  }
+
+  &__remove-post-button {
+  }
+}
