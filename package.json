@@ -1,6 +1,6 @@
 {
   "name": "editorjs-postlist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Editorjs tool to render postlist for Viezone",
   "main": "./dist/bundle.js",
   "scripts": {
@@ -29,5 +29,17 @@
     "svg-inline-loader": "^0.8.0",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
-  }
+  },  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangphuc17/editorjs-postlist.git"
+  },
+  "keywords": [
+    "editorjs",
+    "postlist"
+  ],
+  "bugs": {
+    "url": "https://github.com/hoangphuc17/editorjs-postlist/issues"
+  },
+  "homepage": "https://github.com/hoangphuc17/editorjs-postlist#readme"
 }
