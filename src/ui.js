@@ -2,7 +2,7 @@ import { makeElement, makePostElement } from "./helpers";
 
 // return element for tool
 export default class UI {
-  constructor({ api, config, onSelectPost, readOnly }) {
+  constructor({ api, config, onSelectPost, onRemovePost, readOnly }) {
     this.api = api;
     this.config = config;
     this.onSelectPost = onSelectPost;
@@ -35,8 +35,10 @@ export default class UI {
 
     // create base structure
     // <wrapper>
-    //   <post></post>
-    //   <post></post>
+    //   <list>
+    //     <post></post>
+    //     <post></post>
+    //   </list>
     //   <select-post-button></select-post-button>
     // </wrapper>
     // this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder;
@@ -73,8 +75,12 @@ export default class UI {
   }
 
   updatePosts(posts) {
-    
+    this.nodes.listContainer.innerHTML = '';
 
+    posts.forEach((p, index) => {
+      const pEl = makePostElement(p, this.CSS.post, () => this.onRemovePost(index));
+      this.nodes.listContainer.appendChild(pEl);
+    });
   }
 
   _createSelectPostButton() {

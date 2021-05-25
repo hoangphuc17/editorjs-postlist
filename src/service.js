@@ -162,7 +162,7 @@ const fakeData = [
     _id: "60939af014e705001106420b",
     altPseudonym: "Mí",
     title:
-      "Màn tiêu tiền không ai ngờ trong khoảnh khắc không-được-xài-tiền của Khánh Vân tại Mỹ",
+      "Màn tiêu tiền không ai ngờ trong khoảnh khắc không-được-xài-tiền của Khánh Vân tại Mỹ. Màn tiêu tiền không ai ngờ trong khoảnh khắc không-được-xài-tiền của Khánh Vân tại Mỹ. Màn tiêu tiền không ai ngờ trong khoảnh khắc không-được-xài-tiền của Khánh Vân tại Mỹ. Màn tiêu tiền không ai ngờ trong khoảnh khắc không-được-xài-tiền của Khánh Vân tại Mỹ",
     uniqueId: "2ZxFRc4MUPqw",
     createdAt: "2021-05-06T07:29:52.364Z",
     updatedAt: "2021-05-07T06:55:32.781Z",
@@ -241,7 +241,7 @@ const fakeData = [
 const fakeAddItem = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const post = fakeData[0];
+      const post = fakeData[1];
 
       resolve(post);
     }, 300);

@@ -1,7 +1,7 @@
 import ToolboxIcon from "./svg/article-line.svg";
 import UI from "./ui";
 import Service from "./service";
-import css from "./style.css";
+import css from "./style.scss";
 
 // implement Tool API: https://editorjs.io/tools-api
 export default class PostList {
@@ -40,8 +40,8 @@ export default class PostList {
       onSelectPost: () => {
         this.service.selectPost();
       },
-      onRemovePost: () => {
-        this.onRemove();
+      onRemovePost: (index) => {
+        this.onRemove(index);
       },
     });
 
@@ -61,20 +61,15 @@ export default class PostList {
 
   onSelect(post) {
     this._updatePosts(post, "select");
-  }
-
-  onRemove(post) {
-    this._updatePosts(post, "remove");
-  }
-
-  _updatePosts(post, action) {
-    if (post && action === "select") {
+    if (post) {
       this.data.posts.push(post);
       this.ui.updatePosts(this.data.posts);
     }
+  }
 
-    if (post && action === "remove") {
-      this.data.posts.push(post);
+  onRemove(index) {
+    if (this.data.posts && this.data.posts[index]) {
+      this.data.posts.splice(index, 1);
       this.ui.updatePosts(this.data.posts);
     }
   }

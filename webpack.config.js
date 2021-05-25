@@ -26,20 +26,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              plugins: [
-                require("postcss-nested-ancestors"),
-                require("postcss-nested"),
-              ],
-            },
-          },
-        ],
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.svg$/,
