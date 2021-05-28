@@ -1,37 +1,39 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.join(__dirname, "/dist"),
-    publicPath: "/",
-    filename: "bundle.js",
-    library: "PostList",
-    libraryTarget: "umd",
-    libraryExport: "default",
+    path: path.join(__dirname, '/dist'),
+    publicPath: '/',
+    filename: 'bundle.js',
+    library: 'PostList',
+    libraryTarget: 'umd',
+    libraryExport: 'default',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-            query: {
-              presets: ["@babel/preset-env"],
-            },
-          },
-          "eslint-loader",
-        ],
+        loader: 'babel-loader',
+        options: {
+          presets: [ '@babel/preset-env' ],
+        },
+        // use: [
+        //   {
+        //     loader: 'babel-loader',
+        //   },
+        //   'eslint-loader',
+        // ],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.svg$/,
-        loader: "svg-inline-loader?removeSVGTagAttrs=false",
+        loader: 'svg-inline-loader',
+        // loader: 'svg-inline-loader?removeSVGTagAttrs=false',
       },
     ],
   },

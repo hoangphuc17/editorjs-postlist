@@ -60,7 +60,6 @@ export default class PostList {
   }
 
   onSelect(post) {
-    this._updatePosts(post, "select");
     if (post) {
       this.data.posts.push(post);
       this.ui.updatePosts(this.data.posts);
